@@ -1,5 +1,0 @@
-Flask
-Flask-Bcrypt
-Flask-Limiter
-Flask-SQLAlchemy
-Flask-WTF
