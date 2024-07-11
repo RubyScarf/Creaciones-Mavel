@@ -493,6 +493,7 @@ ol {
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
+  text-align: center; 							/*HERE CUH*/
 }
 .hero__text h2 {
   color: #ffffff;
@@ -507,6 +508,7 @@ ol {
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
+  text-align: center; 							/*HERE CUH*/
 }
 .hero__text .primary-btn {
   position: relative;
