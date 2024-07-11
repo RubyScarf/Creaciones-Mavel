@@ -13,6 +13,30 @@
     <!-- Add custom CSS -->
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="manas.js">
+      $(function() {
+
+      $(document).on('click','a.page-scroll',function(event){
+        var $anchor=$(this);
+        $('html,body').stop().animate({
+          scrollTop: ($($anchor.attr('href')).offset().top-45)
+        },1500,'easeInOutExpo');
+        event.preventDefault();
+      });
+      });
+      
+      
+      
+      
+       $(window).scroll(function() {
+          if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/ 
+          {
+              $('.opaque-navbar').addClass('opaque');
+          } else {
+              $('.opaque-navbar').removeClass('opaque');
+          }
+      });
+    </script>
     <style>
       body,html{
         font-family: 'Josefin Sans', sans-serif;
@@ -314,5 +338,4 @@
   </footer> 
     </body>
     <!-- Add Bootstrap JS --> 
-    <script src="manas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="
