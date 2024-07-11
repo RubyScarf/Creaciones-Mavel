@@ -13,191 +13,74 @@
     <!-- Add custom CSS -->
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script type="text/javascript" src="manas.js">
-      $(function() {
-
-      $(document).on('click','a.page-scroll',function(event){
-        var $anchor=$(this);
-        $('html,body').stop().animate({
-          scrollTop: ($($anchor.attr('href')).offset().top-45)
-        },1500,'easeInOutExpo');
-        event.preventDefault();
-      });
-      });
-      
-       $(window).scroll(function() {
-          if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/ 
-          {
-              $('.opaque-navbar').addClass('opaque');
-          } else {
-              $('.opaque-navbar').removeClass('opaque');
-          }
-      });
-    </script>
     <style>
-      body,html{
-        font-family: 'Josefin Sans', sans-serif;
-      }
-
-      section{
-        background:yellow;
-      }
-      .banner{
-        width:100%;
-        background:url('http://www.alstercloud.de/wp-content/uploads/2017/01/header.jpg') no-repeat;
-        background-size:cover;
-        background-position:center;
-        min-height:600px;
-        
-      }
-      .banner h3{
-        text-align:center;
-        margin-top: 200px;
-        color:#fff;
-        font-size:80px;
-        font-weight:700;
-        font-family: 'Josefin Sans', sans-serif;
-       }
-      .banner p{
-        text-align:center;
-        color:#fff;
-        font-size:1.3em;
-        opacity:1;
-        font-family: 'Josefin Sans', sans-serif;
-        
-      }
-      .opaque-navbar .container .navbar-header >a{
-        color:#fff;
-        text-transform:uppercase;
-        font-weight:bold;
-      }
-      .opaque-navbar .container .navbar-collapse >ul >li >a{
-        color:#fff;
-        text-transform:uppercase;
-        font-weight:700;
+      /* hiding the hamburger icon for the desktop view */
+      .hamburger-icon{
+      display:none;
+      border:none;
+      background-color:transparent;
       }
       
-      .opaque-navbar{
-        background-color:rgba(0,0,0,0);
-        border-bottom:1px solid #eee;
-        
-        transition : background-color 0.5s ease 0s;
+      /* Hiding the checkbox default styling */
+      .hamburger-icon input[type="checkbox"] {
+        appearance: none;
       }
-      .opaque-navbar.opaque {
-          background-color:black ;
-          border:0px;    
-          transition: background-color .5s ease 0s;
-      }
-      
-      ul.dropdown-menu {
-          background-color: black;
-      }
-      .abt{
-        text-align:center;
-      }
-      .abt .jumbotron  {
-        background-color:#e67e22;
-      }
-      .abt h3{
-        
-        color:white;
-        font-size:40px; 
-        
-      }
-       hr{
-        width:100px;
-        border-width:3px;
-        
-      }
-      .abt p{
-        
-        color: rgba(255, 255, 255, 0.7);
-        font-size:20px;
-      }
-      .btn{
-        border:none;
-        border-radius:300px;
-        font-weight:bold;
-        text-transform:uppercase;
-        
-      }
-      .btn-default{
-        padding-bottom: 15px;
-        padding-top:15px;
-        padding-left:30px;
-        padding-right:30px;
-      }
-      
-      .no-padding{
-        padding:0;
-        margin-top:-30px;
-      }
-      
-       .col-6{
-        padding: 0 0;
-      }
-      
-      .no-padding h1{
-        padding-top:55px;
-        text-transform:uppercase;
-      }
-      .no-padding hr{
-        border: 2px solid #d0d0d0;
-      }
-      .bg-dark{
-        background-color:#222222;
-        color:white;
-      }
-      
-      .primary{
-        border:1px solid #d35400;
-      }
-      
-      .my-font{
-        font-size:20px;
-        
-      }
-      .bg-dark{
-        padding-top:55px;
-        padding-bottom:30px;
-      }
-      .padded{
-        padding-top:200px;
-      }
-      .padded .col-lg-4 a{
-       color:#d35400;
-        font-weight:bold;
-      }
-      
-      .list-icon{
-        list-style-type:none;
-        text-decoration:none;
+      .
+      .
+      .
+      /* targeting the element for the 
+      viewport less than 600px*/
+      @media screen and (max-width: 600px) {
+      /* Hiding the nav links with height and overflow */
+       .navigation {
+          height:0;
+          overflow:hidden;
+          flex-direction: column;
+          align-items: center;
+          transition:all 0.5s ease-in-out;
         }
-      .list-icon li{
-        display:inline;
-        padding-right:20px;
-      }
-      .list-icon .fa{
-        font-size:40px;
-      }
-      @media (max-width: 992px) {
-        body
-        {
-          background:white;
+      
+      /* It will put the Logo text at left end 
+      and Hamburger at the right end of the header */
+      .logo {
+          display: flex;
+          justify-content: space-between;
         }
-        .opaque-navbar {
-          background-color: black;
-          height: 60px;
-          transition: background-color .5s ease 0s;
       }
-  </style>
+      
+      /* Making the hamburger button visible */
+      .hamburger-icon {
+          display: block;
+        }
+      
+      /* Initially hiding the cross icon */
+      .fa-x{
+          display:none;
+        }
+      
+      /*determining whether the header contains a checkbox input that is checked before expanding the navigation's height to 100 pixels to make it visible.*/
+        header:has(.hamburger-icon input[type="checkbox"]:checked) .navigation {
+          margin-top: 1rem;
+          height:100px;
+        }
+      
+      /* Hiding the bars icon on checkbox checked state */
+        header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-bars {
+          display:none;
+        }
+      
+      /* Showing the cross icon on checkbox checked state */
+        header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-x {
+          display:inline-block;
+        }
+    </style>
   </head>
   
   <body>
   <header class="bg-danger text-white text-right py-2">
     <nav class="navbar navbar-expand-sm navbar-light bg-light navoptions">
       <div class="container">
-        <a class="nav-link" href="index.html"><img src="https://i.ibb.co/Qn27yL6/is-now.png" alt="Creaciones Mavel Logo" border="0" width="10%"></a> |
+         |
         <a class="me-2" href="index.html">HOME</a> |
         <a class="me-2" href="">1</a> |
         <a class="me-2" href="">2</a> |
@@ -209,23 +92,23 @@
     <hr>
   </header>
 
-  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
-        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-      </button>
-      <a class="navbar-brand page-scroll" href="#">Manas</a> 
-   </div>
-    <div class="collapse navbar-collapse" id="myNav">
-      <ul class=" nav navbar-nav pull-right">
-        <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
-        <li><a href="#contact" class="page-scroll">Contact</a></li>
-      </ul>
-    </div>
+  <header>
+  <div class="logo">
+    <h1 class="logo-text"><a class="nav-link" href="index.html"><img src="https://i.ibb.co/Qn27yL6/is-now.png" alt="Creaciones Mavel Logo" border="0" width="10%"></a></h1>
+    <button class="hamburger-icon">
+      <label for="dropdown">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-x"></i>
+      </label>
+      <input type="checkbox" id="dropdown" />
+    </button>
   </div>
-</div>
+  <ul class="navigation">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</header>
 <section class="banner">
   <div class="container">
     <h3>Graphic & Web Designer</h3>
