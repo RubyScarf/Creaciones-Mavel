@@ -13,56 +13,165 @@
     <!-- Add custom CSS -->
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <!--style>
-      a.nav-link:link,
-      a.nav-link:visited,
-      a.nav-link:hover,
-      a.nav-link:active {
-        color: #fb3f00;
-        text-decoration: none;
+    <style>
+      body,html{
+        font-family: 'Josefin Sans', sans-serif;
       }
 
-      .section-wrapper {
-        display: grid;
-       /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-        grid-gap: 20px;
-        /*align-items: stretch;*/
-        justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
+      section{
+        background:yellow;
+      }
+      .banner{
+        width:100%;
+        background:url('http://www.alstercloud.de/wp-content/uploads/2017/01/header.jpg') no-repeat;
+        background-size:cover;
+        background-position:center;
+        min-height:600px;
+        
+      }
+      .banner h3{
+        text-align:center;
+        margin-top: 200px;
+        color:#fff;
+        font-size:80px;
+        font-weight:700;
+        font-family: 'Josefin Sans', sans-serif;
+       }
+      .banner p{
+        text-align:center;
+        color:#fff;
+        font-size:1.3em;
+        opacity:1;
+        font-family: 'Josefin Sans', sans-serif;
+        
+      }
+      .opaque-navbar .container .navbar-header >a{
+        color:#fff;
+        text-transform:uppercase;
+        font-weight:bold;
+      }
+      .opaque-navbar .container .navbar-collapse >ul >li >a{
+        color:#fff;
+        text-transform:uppercase;
+        font-weight:700;
       }
       
-      .section-item {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        grid-gap: 10px;
-        background-color: ##ededed;
-        padding: 20px;
-        border-radius: 10px;
+      .opaque-navbar{
+        background-color:rgba(0,0,0,0);
+        border-bottom:1px solid #eee;
+        
+        transition : background-color 0.5s ease 0s;
+      }
+      .opaque-navbar.opaque {
+          background-color:black ;
+          border:0px;    
+          transition: background-color .5s ease 0s;
       }
       
-      .section-item h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 24px;
-        margin-top: 0;
-        text-align: center;
+      ul.dropdown-menu {
+          background-color: black;
+      }
+      .abt{
+        text-align:center;
+      }
+      .abt .jumbotron  {
+        background-color:#e67e22;
+      }
+      .abt h3{
+        
+        color:white;
+        font-size:40px; 
+        
+      }
+       hr{
+        width:100px;
+        border-width:3px;
+        
+      }
+      .abt p{
+        
+        color: rgba(255, 255, 255, 0.7);
+        font-size:20px;
+      }
+      .btn{
+        border:none;
+        border-radius:300px;
+        font-weight:bold;
+        text-transform:uppercase;
+        
+      }
+      .btn-default{
+        padding-bottom: 15px;
+        padding-top:15px;
+        padding-left:30px;
+        padding-right:30px;
       }
       
-      .section-item img {
-        width: 300px; /*100%*/
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
+      .no-padding{
+        padding:0;
+        margin-top:-30px;
       }
       
-      .section-wrapper img {
-        width: 100%;
-        height: auto;
+       .col-6{
+        padding: 0 0;
       }
-
-  </style-->
-  
+      
+      .no-padding h1{
+        padding-top:55px;
+        text-transform:uppercase;
+      }
+      .no-padding hr{
+        border: 2px solid #d0d0d0;
+      }
+      .bg-dark{
+        background-color:#222222;
+        color:white;
+      }
+      
+      .primary{
+        border:1px solid #d35400;
+      }
+      
+      .my-font{
+        font-size:20px;
+        
+      }
+      .bg-dark{
+        padding-top:55px;
+        padding-bottom:30px;
+      }
+      .padded{
+        padding-top:200px;
+      }
+      .padded .col-lg-4 a{
+       color:#d35400;
+        font-weight:bold;
+      }
+      
+      .list-icon{
+        list-style-type:none;
+        text-decoration:none;
+        }
+      .list-icon li{
+        display:inline;
+        padding-right:20px;
+      }
+      .list-icon .fa{
+        font-size:40px;
+      }
+      @media (max-width: 992px) {
+        body
+        {
+          background:white;
+        }
+        .opaque-navbar {
+          background-color: black;
+          height: 60px;
+          transition: background-color .5s ease 0s;
+      }
+  </style>
   </head>
+  
   <body>
   <header class="bg-danger text-white text-right py-2">
     <nav class="navbar navbar-expand-sm navbar-light bg-light navoptions">
@@ -79,129 +188,126 @@
     <hr>
   </header>
 
-  <div class="cont s--inactive">
-    <!-- cont inner start -->
-    <div class="cont__inner">
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 1</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">1</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="1">1</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 2</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">2</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="2">2</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 3</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">3</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="3">3</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 4</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">4</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="4">4</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 5</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">5</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="5">5</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
+  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="#">Manas</a> 
+   </div>
+    <div class="collapse navbar-collapse" id="myNav">
+      <ul class=" nav navbar-nav pull-right">
+        <li><a href="#about" class="page-scroll">About</a></li>
+        <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
+        <li><a href="#contact" class="page-scroll">Contact</a></li>
+      </ul>
     </div>
-    <!-- cont inner end -->
   </div>
+</div>
+<section class="banner">
+  <div class="container">
+    <h3>Graphic & Web Designer</h3>
+    <p>A Full Stack Developer, Based in XXXXXX. <br/> </p>
+  </div>
+</section>
 
-  <a href="https://dribbble.com/shots/2802024-Satellite-Website-Prototype" target="_blank" class="icon-link">
-    <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
-  </a>
-  <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
-    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
-  </a>
+<div class="abt" id="about">
+<div class="jumbotron">
+  <div class="container">
+    <h3>We Have What You Need</h3>
+    <hr></hr>
+    <p>From a responsive Front End design to a Dynamic Backend handling,<br/> we provide you with your dream site and increase your chance of success.</p>
+    
+  <a href="#portfolio" class="btn btn-default">Get Started!</a>
+  </div> 
+</div>
+</div>
+<!--End ofAbout-->
+
+<!--PortFolio-->
+
+<div class="no-padding text-center" id="portfolio">
+ <div class="container">
+   <h1>Portfolio</h1>
+    <hr></hr>
+  </div>
+ 
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class=" col-6 col-lg-4 col-sm-6">
+        <img src="http://4.bp.blogspot.com/-bahoT9-tRn4/UYQmxSCtFdI/AAAAAAAAA6s/QQzILTQba18/s1600/art-camera-cool-photography-toy-Favim.com-446299.jpg" class="img-thumbnail" alt="Project-1" width="100%" height="auto">
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+         <img src="http://4.bp.blogspot.com/-bahoT9-tRn4/UYQmxSCtFdI/AAAAAAAAA6s/QQzILTQba18/s1600/art-camera-cool-photography-toy-Favim.com-446299.jpg" class="img-thumbnail" alt="Project-1" width="100%" height="auto">
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+         <img src="http://4.bp.blogspot.com/-bahoT9-tRn4/UYQmxSCtFdI/AAAAAAAAA6s/QQzILTQba18/s1600/art-camera-cool-photography-toy-Favim.com-446299.jpg" class="img-thumbnail" alt="Project-1" width="100%" height="auto">
+      </div>
+    </div>
+    
+    <div class="row no-gutter">
+      <div class=" col-6 col-lg-4 col-sm-6">
+        <img src="http://s9.favim.com/orig/130725/photography-pocket-watches-v-vintage-Favim.com-801353.jpg" alt="Project-1" width="100%" height="auto">
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+         <img src="http://s9.favim.com/orig/130725/photography-pocket-watches-v-vintage-Favim.com-801353.jpg" class="img-thumbnail" alt="Project-1" width="100%" height="auto">
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+         <img src="http://s9.favim.com/orig/130725/photography-pocket-watches-v-vintage-Favim.com-801353.jpg" alt="Project-1" width="100%" height="auto">
+      </div>
+    </div>
+  </div>
+</div>
+<!--End of Portfolio-->
+
+<div class="contact" id="contact">
+  <div class="bg-dark">
+<div class="container" >
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+      <h1>Let's Get In Touch!</h2>
+      <hr class="primary"></hr>
+    <p class="my-font">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+    </div>
+   <div class="padded">
+    <div class="col-lg-4 col-lg-offset-2 text-center">
+    <i class="fa fa-phone fa-3x sr-contact"></i>
+    <p>9999999999</p>
+    </div>
+    
+    <div class="col-lg-4 text-center">
+       <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+       <p><a href="mailto:your-email@your-domain.com">gfgfgfg@gmail.com</a></p>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<!--End Of Contact-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-6 text-center">
+      <h3>About this Page</h3>
+      <p>Used:Bootstrap,Jquery,HTML,CSS.<br/>
+      Made By: Manas Yadav</p>
+      
+    </div>
+      <div class="col-sm-6 text-center">
+        <h3>Around The Web</h3>
+        <ul class="list-icon">
+          <li><a type="button" href="https://www.facebook.com/manas.yadav.71"><i class="fa fa-facebook-official"></i></a>
+            <li><a type="button" href="https://github.com/manas2297"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+              <li><a type="button" href=""><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+        </ul>
+      </div> 
+    </div>
+  </div>
+  
+</footer>
     
   <footer class="bg-danger text-white text-center py-1"> 
     <p>&copy; 2024 Mavel</p> 
